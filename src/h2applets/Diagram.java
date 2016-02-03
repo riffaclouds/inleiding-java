@@ -11,7 +11,7 @@ public class Diagram extends Applet {
 	}
 	
 	public void paint(Graphics g){
-		//Voting applet for the US elecetion 2016!
+		//Voting Applet for the US elecetion 2016!
 		//1
 		setBackground(Color.white);
 		g.setColor(Color.blue);
