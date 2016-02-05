@@ -10,6 +10,7 @@ public class Diagram extends Applet {
 	Button vote;
 	String schermtekst;
 	TextField tekstvak;
+	Label label;
 	
 	
 	public void init() {
@@ -20,13 +21,20 @@ public class Diagram extends Applet {
 		//string object initialiseren
 		schermtekst = "doet deze knop wel iets";
 		
-		tekstvak = new TextField("klik op me", 20);
-		add(tekstvak);
+		//ruimte voor objecten laden in het geheugen
+		label = new Label("label!");
+		tekstvak = new TextField("naam", 6);
+		knop = new Button("intelliJ rise to critical mass Lvl1");
 		
-		knop = new Button("click for critical mass Lvl1");
+		//knop linken aan ActionListener
 		KnopListener kl = new KnopListener();
         knop.addActionListener( kl );
-		add(knop);
+        
+        //instanties van deze objecten toe voegen aan de applet! 
+        //Enter the Matrix
+        add(label);
+        add(tekstvak);
+        add(knop);
 		
 	}
 	
