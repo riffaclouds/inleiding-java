@@ -11,7 +11,8 @@ public class Diagram extends Applet {
 	String schermtekst;
 	TextField tekstvak;
 	Label label;
-	
+	int voteCount = 200;
+	int b = 100;
 	
 	public void init() {
 		//grote(x, y) van de applet window bepalen
@@ -24,7 +25,7 @@ public class Diagram extends Applet {
 		//ruimte voor objecten laden in het geheugen
 		label = new Label("label!");
 		tekstvak = new TextField("naam", 6);
-		knop = new Button("intelliJ rise to critical mass Lvl1");
+		knop = new Button("Vote for Bernie!");
 		
 		//knop linken aan ActionListener
 		KnopListener kl = new KnopListener();
@@ -38,6 +39,7 @@ public class Diagram extends Applet {
 		
 	}
 	
+		
 	public void paint(Graphics g){
 		//Voting Applet for the US elecetion 2016!
 		
@@ -51,12 +53,15 @@ public class Diagram extends Applet {
 		g.drawString("Hillary Clinton", 5, 315);
 		//kandidaat 2
 		g.setColor(Color.red);
-		g.fillRect(110, 200, 60, 100);
+		g.fillRect(110, voteCount, 60, b);
 		g.drawString("Bernie Sanders", 105, 315);
 		g.setColor(Color.black);
 		g.drawLine(170, 35, 170, 320);
 		
 		g.drawString(schermtekst, 170, 50);
+		
+		g.drawString(String.valueOf(voteCount), 170, 65);
+		
 		
 	}
 	
@@ -64,7 +69,8 @@ public class Diagram extends Applet {
 		public void actionPerformed(ActionEvent e){
 			
 			schermtekst = "ja, ik kom uit een inwendige klasse!";
-					
+			voteCount -= 10;
+			b = b + 10;
 			//refesh the screen, making the change visible
 			repaint();
 		}
