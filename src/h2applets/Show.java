@@ -12,13 +12,17 @@ public class Show extends Applet {
 
 	  //een (lege) methode die de Applet initialiseert
 	  public void init() {
-		  setSize(600, 600);
-		  knop = new Button("Vote vor Bernie!");
-		  add(knop);
-		  setBackground(Color.white); 
+		  setSize(700, 700);
+		  setBackground(Color.white);
+		  knop = new Button("I am a old skool Button");
+		  add(knop);		  
+		   
 	  }
+	  
 	  //een methode die de inhoud van het scherm tekent
 	  public void paint(Graphics g) {
+		  	int x = 350;
+		  	int y = 350;
 		  	
 		    g.setColor(Color.black);
 		    g.drawRect(19, 19, 51, 11);
@@ -33,10 +37,15 @@ public class Show extends Applet {
 		    g.setColor(Color.yellow);
 		    g.fillRect(60, 20, 10, 10);
 		    g.setColor(Color.black);
-		    g.drawString("Doet deze knop wel iets?", 230, 60 );
-		   
+		    g.drawString("Doet deze knop wel iets?", 230, 60 );   
 		    
-		    g.drawOval(20, 40, 50, 50);
+		    //cirkels
+		    int size = 50;
+		    for(int i = 0; i < 50; i++){
+		    g.drawOval(x-=5, y-=5, size+=5, size+=5);
+		    
+		    }
+		    
 	  }
 
 	}

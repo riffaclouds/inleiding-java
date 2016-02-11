@@ -30,6 +30,7 @@ public class Diagram extends Applet {
 		//knop linken aan ActionListener
 		KnopListener kl = new KnopListener();
         knop.addActionListener( kl );
+        tekstvak.addActionListener(kl);
         
         //instanties van deze objecten toe voegen aan de applet! 
         //Enter the Matrix
