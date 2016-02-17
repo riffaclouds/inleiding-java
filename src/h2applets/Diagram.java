@@ -20,7 +20,7 @@ public class Diagram extends Applet {
 		setSize(600, 600);
 		
 		//string object initialiseren
-		schermtekst = "doet deze knop wel iets";
+		schermtekst = "Choose the next president of the United states of America";
 		
 		//ruimte voor objecten laden in het geheugen
 		label = new Label("label!");
@@ -57,9 +57,9 @@ public class Diagram extends Applet {
 		g.fillRect(110, voteCount, 60, b);
 		g.drawString("Bernie Sanders", 105, 315);
 		g.setColor(Color.black);
-		g.drawLine(170, 35, 170, 320);
+		//g.drawLine(170, 35, 170, 320);
 		
-		g.drawString(schermtekst, 170, 50);
+		g.drawString(schermtekst, 10, 80);
 		
 		g.drawString(String.valueOf(voteCount), 170, 65);
 		
@@ -68,11 +68,18 @@ public class Diagram extends Applet {
 	
 	class KnopListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			
-			schermtekst = "ja, ik kom uit een inwendige klasse!";
-			voteCount -= 10;
-			b = b + 10;
-			//refesh the screen, making the change visible
+
+
+			if(voteCount >= 100){
+				schermtekst = "Thank you for voting fName + lName!";
+				voteCount -= 10;
+				b = b + 10;
+				//refesh the screen, making the change visible
+			} else{
+				schermtekst = "Voting has closed, please exit the booth.";
+			}
+
+
 			repaint();
 		}
 	}

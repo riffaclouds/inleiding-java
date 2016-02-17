@@ -19,6 +19,7 @@ public class Tafel extends Applet {
 	public void init(){
 		setSize(300, 400);
 		setBackground(Color.white);
+		tG = 1;
 		
 		//tekstvak initialiseren/in het geheugen laden
 		label = new Label("tafel van:");
