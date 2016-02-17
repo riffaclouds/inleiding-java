@@ -1,6 +1,7 @@
 package h2applets;
 
-import h2applets.Diagram.KnopListener;
+import h2applets.Diagram.bKnopListener;
+import h2applets.Diagram.hKnopListener;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
