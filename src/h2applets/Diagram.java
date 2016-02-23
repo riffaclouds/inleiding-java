@@ -13,10 +13,10 @@ public class Diagram extends Applet {
 	String schermtekst2;
 	TextField tekstvak;
 	Label label;
-	int bVote = 200;
-	int hVote = 200;
-	int b = 100;
-	int h = 100;
+	int bVote = 300;
+	int hVote = 300;
+	int b = 5;
+	int h = 5;
 	
 	public void init() {
 		//grote(x, y) van de applet window bepalen
@@ -43,9 +43,6 @@ public class Diagram extends Applet {
         hKnop.addActionListener( hkl );
                 
         
-        
-        
-        
         //instanties van deze objecten toe voegen aan de applet! 
         //Enter the Matrix
         //add(label);
@@ -55,7 +52,6 @@ public class Diagram extends Applet {
 		
 	}
 	
-		
 	public void paint(Graphics g){
 		int x = 10;
 		int y = 0;
@@ -67,21 +63,21 @@ public class Diagram extends Applet {
 		
 		//behind the scenes changes van variable zichtbaar maken
 		
-		g.drawString(String.valueOf(hVote), x+170, y+65);
+		g.drawString("[ " + String.valueOf(hVote) + " ]", x+170, y+65);
 				
-		g.drawString(String.valueOf(bVote), x+200, 65);
+		g.drawString("[ " + String.valueOf(bVote) + " ]", x+220, 65);
 		
 		
 		//kandidaat 1
 		setBackground(Color.white);
 		g.setColor(Color.blue);
 		g.fillRect(x, hVote, 60, h);
-		g.drawString("Hillary Clinton", 5, 315);
+		g.drawString("Hillary Clinton", 5, 325);
 		//kandidaat 2
 		x+=100;
 		g.setColor(Color.red);
 		g.fillRect(x, bVote, 60, b);
-		g.drawString("Bernie Sanders", 105, 315);
+		g.drawString("Bernie Sanders", 105, 325);
 		g.setColor(Color.black);
 		
 		x=10;
@@ -90,10 +86,7 @@ public class Diagram extends Applet {
 		y+=15;
 		g.drawString(schermtekst2, x, y);
 		g.drawLine(x-10, y+5, x+400, y+5);
-		
-		
-		
-		
+			
 	}
 	
 	class bKnopListener implements ActionListener{
@@ -110,13 +103,10 @@ public class Diagram extends Applet {
 				if(bVote == 100){
 					schermtekst = "Voting has closed, Bernie Sanders won, please exit the booth.";
 				} else{
-					schermtekst = "Voting has closed, Clinton won, please exit the booth.";
-				}
-				
-				
+					schermtekst = "Voting has closed, you lost, Clinton won, please exit the booth.";
+					schermtekst2 = "";
+				}			
 			}
-
-
 			repaint();
 		}
 	}
@@ -135,11 +125,10 @@ public class Diagram extends Applet {
 				if(hVote == 100){
 					schermtekst = "Voting has closed, Hillary Clinton won, please exit the booth.";
 				} else if(bVote == 100){
-					schermtekst = "Voting has closed, Bernie won, please exit the booth.";
+					schermtekst = "Voting has closed, you lost, Bernie won, please exit the booth.";
+					schermtekst2 = "";
 				}
 			}
-
-
 			repaint();
 		}
 	}
