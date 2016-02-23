@@ -62,30 +62,30 @@ public class Diagram extends Applet {
 		this.bKnop.setLocation(x+120, y);
 		
 		//behind the scenes changes van variable zichtbaar maken
-		
-		g.drawString("[ " + String.valueOf(hVote) + " ]", x+170, y+65);
+		y+=55;
+		g.drawString("[ " + String.valueOf(hVote) + " ]", x+170, y);
 				
-		g.drawString("[ " + String.valueOf(bVote) + " ]", x+220, 65);
+		g.drawString("[ " + String.valueOf(bVote) + " ]", x+220, y);
+		
+		x=10;
+		g.drawString(schermtekst, x, 70);
+		y+=15;
+		g.drawString(schermtekst2, x, 85);
+		g.drawLine(x-10, 100, x+400, 100);
 		
 		
 		//kandidaat 1
+		y+=260;
 		setBackground(Color.white);
 		g.setColor(Color.blue);
 		g.fillRect(x, hVote, 60, h);
-		g.drawString("Hillary Clinton", 5, 325);
+		g.drawString("Hillary Clinton", 5, y);
 		//kandidaat 2
 		x+=100;
 		g.setColor(Color.red);
 		g.fillRect(x, bVote, 60, b);
-		g.drawString("Bernie Sanders", 105, 325);
+		g.drawString("Bernie Sanders", 105, y);
 		g.setColor(Color.black);
-		
-		x=10;
-		y+=80;
-		g.drawString(schermtekst, x, y);
-		y+=15;
-		g.drawString(schermtekst2, x, y);
-		g.drawLine(x-10, y+5, x+400, y+5);
 			
 	}
 	
