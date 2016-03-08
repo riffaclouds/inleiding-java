@@ -49,7 +49,7 @@ public class Diagram extends Applet {
         //add(tekstvak);
         add(hKnop);
         add(bKnop);
-		
+        
 	}
 	
 	public void paint(Graphics g){
@@ -67,15 +67,19 @@ public class Diagram extends Applet {
 				
 		g.drawString("[ " + String.valueOf(bVote) + " ]", x+220, y);
 		
+		y+=45;
+		
+		g.drawLine(x, y, x+400, 100);
+		
 		x=10;
 		g.drawString(schermtekst, x, 70);
 		y+=15;
 		g.drawString(schermtekst2, x, 85);
-		g.drawLine(x-10, 100, x+400, 100);
+		
 		
 		
 		//kandidaat 1
-		y+=260;
+		y+=210;
 		setBackground(Color.white);
 		g.setColor(Color.blue);
 		g.fillRect(x, hVote, 60, h);
@@ -86,7 +90,7 @@ public class Diagram extends Applet {
 		g.fillRect(x, bVote, 60, b);
 		g.drawString("Bernie Sanders", 105, y);
 		g.setColor(Color.black);
-			
+					
 	}
 	
 	class bKnopListener implements ActionListener{
