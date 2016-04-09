@@ -129,7 +129,7 @@ public class Diagram extends Applet {
 				if(hVote == 100){
 					schermtekst = "Voting has closed, Hillary Clinton won, please exit the booth.";
 				} else if(bVote == 100){
-					schermtekst = "Voting has closed, you lost, Bernie won, please exit the booth.";
+					schermtekst = "Voting has closed, you lost!, Bernie won, please exit the booth.";
 					schermtekst2 = "";
 				}
 			}
