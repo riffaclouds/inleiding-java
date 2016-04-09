@@ -20,14 +20,14 @@ public class Tabel extends Applet {
 		int x = 10;
 		int y = 15;
 
-		/*
+
 		g.drawString(earthling[0] + earthling[1] + earthling[2], x, y);
 		y+=15;
 		g.drawString(earthling[1], x, y);
 		y+=15;
 		g.drawString(earthling[2], x, y);
-		*/
 
-		
+
+
 	}
 }
