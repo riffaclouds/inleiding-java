@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.applet.*;
 
-
+//Deepin 2015.1.1
 public class Diagram extends Applet {
 	Button bKnop;
 	Button hKnop;
