@@ -7,17 +7,30 @@ import java.applet.*;
 public class Tabel extends Applet {
 	long[] salaris;
 	String[] earthling;
+	long maximum;
 	
 	public void init(){
 		setBackground(Color.white);
 		salaris = new long[10];
+
+		//maximum = salaris[0];
+
 		earthling = new String[] {" Suzi ", " piepi ", " poepie "};
-		/*salaris[0] = 3000;
-		salaris[1] = 30000;
-		salaris[2] = 12500000; */
+
 
 		for (int teller = 0; teller < salaris.length; teller ++) {
 			salaris[teller] = 100 * teller + 100;
+		}
+
+		salaris[0] = 3000;
+		salaris[1] = 30000;
+		salaris[2] = 1250000;
+
+		maximum = salaris[0];
+		for	(int teller = 0; teller < salaris.length; teller ++){
+			if(salaris[teller] > maximum){
+				maximum = salaris[teller];
+			}
 		}
 
 
@@ -35,6 +48,9 @@ public class Tabel extends Applet {
 			g.drawString("" + salaris[teller], 10, 20 * teller + 20);
 		}
 
+		//x+=5;
+		y+=200;
+		g.drawString("Het maximum is: " + maximum, x, y);
 
 
 
